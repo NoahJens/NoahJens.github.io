@@ -1,10 +1,10 @@
 // players
 let players = {
     Luis: { powerup: { toClear: [] }, score: 0, ready: false },
-    greenlee: { powerup: { toClear: [] }, score: 0, ready: false },
-    pinkney: { powerup: { toClear: [] }, score: 0, ready: false },
-    bluebell: { powerup: { toClear: [] }, score: 0, ready: false },
-    willem: { powerup: { toClear: [] }, score: 0, ready: false },
+    Josefine: { powerup: { toClear: [] }, score: 0, ready: false },
+    Lil: { powerup: { toClear: [] }, score: 0, ready: false },
+    Nis: { powerup: { toClear: [] }, score: 0, ready: false },
+    Noah: { powerup: { toClear: [] }, score: 0, ready: false },
     greydon: { powerup: { toClear: [] }, score: 0, ready: false },
 }
 
@@ -50,8 +50,8 @@ let canvasID,
     ctxPV = powerupVisualCanvas.getContext("2d"),
     ctxPH = powerupHitboxCanvas.getContext("2d"),
     yellow = getComputedStyle(document.documentElement).getPropertyValue(`--yellow`), // colors
-    green = getComputedStyle(document.documentElement).getPropertyValue(`--greenlee`),
-    greent = getComputedStyle(document.documentElement).getPropertyValue(`--greenlee-t`),
+    green = getComputedStyle(document.documentElement).getPropertyValue(`--Josefine`),
+    greent = getComputedStyle(document.documentElement).getPropertyValue(`--Josefine-t`),
     red = getComputedStyle(document.documentElement).getPropertyValue(`--Luis`),
     redt = getComputedStyle(document.documentElement).getPropertyValue(`--Luis-t`),
     blue = getComputedStyle(document.documentElement).getPropertyValue(`--blue`),

@@ -18,11 +18,11 @@ body {
     --yellow: rgb(255, 255, 0);
     --Luis: rgb(255, 0, 0);
     --Luis-t: rgba(255, 0, 0, 0);
-    --greenlee: rgb(0, 255, 0);
-    --greenlee-t: rgba(0, 255, 0, 0);
-    --pinkney: rgb(255, 0, 255);
-    --bluebell: rgb(0, 255, 255);
-    --willem: rgb(255, 127, 0);
+    --Josefine: rgb(0, 255, 0);
+    --Josefine-t: rgba(0, 255, 0, 0);
+    --Lil: rgb(255, 0, 255);
+    --Nis: rgb(0, 255, 255);
+    --Noah: rgb(255, 127, 0);
     --greydon: rgb(200, 200, 200);
 }
 
@@ -219,20 +219,20 @@ canvas {
     color: var(--Luis);
 }
 
-.greenlee {
-    color: var(--greenlee);
+.Josefine {
+    color: var(--Josefine);
 }
 
-.pinkney {
-    color: var(--pinkney);
+.Lil {
+    color: var(--Lil);
 }
 
-.bluebell {
-    color: var(--bluebell);
+.Nis {
+    color: var(--Nis);
 }
 
-.willem {
-    color: var(--willem);
+.Noah {
+    color: var(--Noah);
 }
 
 .greydon {
