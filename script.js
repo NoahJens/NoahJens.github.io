@@ -1,10 +1,10 @@
 // players
 let players = {
-    fred: { powerup: { toClear: [] }, score: 0, ready: false },
-    greenlee: { powerup: { toClear: [] }, score: 0, ready: false },
-    pinkney: { powerup: { toClear: [] }, score: 0, ready: false },
-    bluebell: { powerup: { toClear: [] }, score: 0, ready: false },
-    willem: { powerup: { toClear: [] }, score: 0, ready: false },
+    Luis: { powerup: { toClear: [] }, score: 0, ready: false },
+    Josefine: { powerup: { toClear: [] }, score: 0, ready: false },
+    Lil: { powerup: { toClear: [] }, score: 0, ready: false },
+    Nis: { powerup: { toClear: [] }, score: 0, ready: false },
+    Noah: { powerup: { toClear: [] }, score: 0, ready: false },
     greydon: { powerup: { toClear: [] }, score: 0, ready: false },
 }
 
