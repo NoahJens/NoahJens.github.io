@@ -1,74 +1,46 @@
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
 
-// Der einzelne Spieler
-const player = {
-  x: 400, y: 300, dx: 2, dy: 0, color: 'orange', trail: []
-};
-
-const directions = {
-  'ArrowLeft': [0, -2], // nach links
-  'ArrowRight': [0, 2]  // nach rechts
-};
-
-let gameInterval;
-
-function drawPlayer() {
-  ctx.fillStyle = player.color;
-  ctx.fillRect(player.x, player.y, 10, 10);
-  player.trail.push({ x: player.x, y: player.y });
-
-  // Zeichnen der hinterlassenen Spur
-  for (let i = 0; i < player.trail.length; i++) {
-    ctx.fillRect(player.trail[i].x, player.trail[i].y, 10, 10);
-  }
-}
-
-function movePlayer() {
-  player.x += player.dx;
-  player.y += player.dy;
-
-  // Kollision mit den Wänden
-  if (player.x < 0 || player.x >= canvas.width || player.y < 0 || player.y >= canvas.height) {
-    endGame();
-  }
-
-  // Kollision mit der eigenen Spur
-  for (let i = 0; i < player.trail.length; i++) {
-    if (player.x === player.trail[i].x && player.y === player.trail[i].y) {
-      endGame();
-    }
-  }
-}
-
-function endGame() {
-  alert('Du hast verloren!');
-  clearInterval(gameInterval);
-}
+const players = [
+    { x: 100, y: 100, angle: 0, speed: 2, color: "blue", trail: [], left: "a", right: "d" },
+    { x: 700, y: 100, angle: Math.PI, speed: 2, color: "red", trail: [], left: "j", right: "l" },
+    { x: 100, y: 500, angle: 0, speed: 2, color: "green", trail: [], left: "v", right: "n" },
+    { x: 700, y: 500, angle: Math.PI, speed: 2, color: "yellow", trail: [], left: "4", right: "6" },
+    { x: 400, y: 300, angle: Math.PI / 2, speed: 2, color: "purple", trail: [], left: "ArrowLeft", right: "ArrowRight" }
+];
 
 function update() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Spieler bewegen und zeichnen
-  movePlayer();
-  drawPlayer();
+    players.forEach(player => {
+        player.trail.push({ x: player.x, y: player.y });
+        player.x += Math.cos(player.angle) * player.speed;
+        player.y += Math.sin(player.angle) * player.speed;
+    });
 }
 
-function changeDirection(event) {
-  const key = event.key;
-  if (directions[key]) {
-    const [dx, dy] = directions[key];
-
-    // Verhindern, dass der Spieler 180 Grad dreht
-    if (player.dx === -dx && player.dy === -dy) {
-      return;
-    }
-
-    player.dx = dx;
-    player.dy = dy;
-  }
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    players.forEach(player => {
+        ctx.fillStyle = player.color;
+        player.trail.forEach(point => {
+            ctx.fillRect(point.x, point.y, 2, 2);
+        });
+    });
 }
 
-// Spiel starten
-document.addEventListener('keydown', changeDirection);
-gameInterval = setInterval(update, 1000 / 30);  // 30 FPS
+document.addEventListener("keydown", (event) => {
+    players.forEach(player => {
+        if (event.key === player.left) {
+            player.angle -= 0.1;
+        } else if (event.key === player.right) {
+            player.angle += 0.1;
+        }
+    });
+});
+
+function gameLoop() {
+    update();
+    draw();
+    requestAnimationFrame(gameLoop);
+}
+
+gameLoop();
