@@ -16,8 +16,8 @@ body {
     --blue: rgb(0, 0, 255);
     --blue-t: rgba(0, 0, 255, 0);
     --yellow: rgb(255, 255, 0);
-    --fred: rgb(255, 0, 0);
-    --fred-t: rgba(255, 0, 0, 0);
+    --Luis: rgb(255, 0, 0);
+    --Luis-t: rgba(255, 0, 0, 0);
     --greenlee: rgb(0, 255, 0);
     --greenlee-t: rgba(0, 255, 0, 0);
     --pinkney: rgb(255, 0, 255);
@@ -215,8 +215,8 @@ canvas {
     visibility: hidden;
 }
 
-.fred {
-    color: var(--fred);
+.Luis {
+    color: var(--Luis);
 }
 
 .greenlee {
