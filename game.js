@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 
 // Der einzelne Spieler
 const player = {
-  x: 400, y: 300, dx: 2, dy: 0, color: 'green', trail: []
+  x: 400, y: 300, dx: 2, dy: 0, color: 'orange', trail: []
 };
 
 const directions = {
