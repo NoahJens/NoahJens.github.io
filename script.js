@@ -1,10 +1,10 @@
 // players
 let players = {
     Luis: { powerup: { toClear: [] }, score: 0, ready: false },
-    Josefine: { powerup: { toClear: [] }, score: 0, ready: false },
-    Lil: { powerup: { toClear: [] }, score: 0, ready: false },
-    Nis: { powerup: { toClear: [] }, score: 0, ready: false },
-    Noah: { powerup: { toClear: [] }, score: 0, ready: false },
+    greenlee: { powerup: { toClear: [] }, score: 0, ready: false },
+    pinkney: { powerup: { toClear: [] }, score: 0, ready: false },
+    bluebell: { powerup: { toClear: [] }, score: 0, ready: false },
+    willem: { powerup: { toClear: [] }, score: 0, ready: false },
     greydon: { powerup: { toClear: [] }, score: 0, ready: false },
 }
 
@@ -52,8 +52,8 @@ let canvasID,
     yellow = getComputedStyle(document.documentElement).getPropertyValue(`--yellow`), // colors
     green = getComputedStyle(document.documentElement).getPropertyValue(`--greenlee`),
     greent = getComputedStyle(document.documentElement).getPropertyValue(`--greenlee-t`),
-    red = getComputedStyle(document.documentElement).getPropertyValue(`--fred`),
-    redt = getComputedStyle(document.documentElement).getPropertyValue(`--fred-t`),
+    red = getComputedStyle(document.documentElement).getPropertyValue(`--Luis`),
+    redt = getComputedStyle(document.documentElement).getPropertyValue(`--Luis-t`),
     blue = getComputedStyle(document.documentElement).getPropertyValue(`--blue`),
     bluet = getComputedStyle(document.documentElement).getPropertyValue(`--blue-t`),
     tFrame = 0, // cur frame in draw
@@ -717,7 +717,7 @@ function powerupSpawner() {
         spawnX = Math.floor(Math.random() * h),
         spawnY = Math.floor(Math.random() * h),
         powup = achtung.powerups[newPow]
-    // powup = "r_reverse" //  apklsdjalskdjalksdjlaksjdlakfjlæanæoæiuanweifupnaweifunaewæfnakdnfkalsjdfnklajsdfnkaljdnfklajnsdfklajnsdfkajdsnfkajdsnflakjdnf
+    // powup = "r_reverse" //  apklsdjalskdjalksdjlaksjdlakfjlÃ¦anÃ¦oÃ¦iuanweifupnaweifunaewÃ¦fnakdnfkalsjdfnklajsdfnkaljdnfklajnsdfklajnsdfkajdsnfkajdsnflakjdnf
 
     achtung.powerupsOnScreen[achtung.powerupsOnScreen.length] = {}
     achtung.powerupsOnScreen[achtung.powerupsOnScreen.length - 1].pow = powup
